@@ -6,7 +6,7 @@ from .events import *
 
 class EpidemicPrevention:
     def __init__(self):
-        itchat.auto_login(hotReload=True, statusStorageDir="itchat.pk1")
+        itchat.auto_login(hotReload=True, statusStorageDir="itchat.pk1", enableCmdQR=True)
         Thread(target=itchat.run).start()
         self.set_timer()
 
@@ -31,4 +31,4 @@ class EpidemicPrevention:
             #     self.send_warning()
             # elif not (15 <= t.tm_hour <= 16):
             #     flag = False
-            time.sleep(1000)
+            time.sleep(600)
