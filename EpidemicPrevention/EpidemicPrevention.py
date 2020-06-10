@@ -5,8 +5,8 @@ from .events import *
 
 
 class EpidemicPrevention:
-    def __init__(self):
-        itchat.auto_login(hotReload=True, statusStorageDir="itchat.pk1", enableCmdQR=True)
+    def __init__(self, enableCmdQR = False):
+        itchat.auto_login(hotReload=True, statusStorageDir="itchat.pk1", enableCmdQR=enableCmdQR)
         Thread(target=itchat.run).start()
         self.set_timer()
 
