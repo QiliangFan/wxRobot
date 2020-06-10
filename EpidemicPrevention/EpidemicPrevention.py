@@ -11,10 +11,9 @@ class EpidemicPrevention:
         self.set_timer()
 
     def send_warning(self):
-        to = "test"
         msg = "[epidemic prevention]填写防疫信息啦! \n [我是防疫信息填报小机器人, 将于晚上12:00和" \
               "中午11:00分别发送一次通知(*∩_∩*)]🤣"
-        send_warning_to_group(msg, to)
+        send_warning_to_group(msg)
 
     def set_timer(self):
         flag = False
