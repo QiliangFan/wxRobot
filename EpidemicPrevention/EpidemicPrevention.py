@@ -20,7 +20,7 @@ class EpidemicPrevention:
         while True:
             t = time.localtime(time.time())
             print(t)
-            if (0 <= t.tm_hour <= 1) or (11 <= t.tm_hour <= 12) and not flag:
+            if ((0 <= t.tm_hour <= 1) or (11 <= t.tm_hour <= 12)) and not flag:
                 flag = True
                 self.send_warning()
             elif not ((0 <= t.tm_hour <= 1) or (11 <= t.tm_hour <= 12)):
