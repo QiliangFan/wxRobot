@@ -11,9 +11,12 @@ class EpidemicPrevention:
         self.set_timer()
 
     def send_warning(self):
-        msg = "[epidemic prevention]填写防疫信息啦! \n [我是防疫信息填报小机器人, 将于晚上12:00和" \
+        msg = "[epidemic prevention] 填写防疫信息啦! \n [我是防疫信息填报小机器人, 将于晚上12:00和" \
               "中午11:00分别发送一次通知(*∩_∩*)]🤣"
         send_warning_to_group(msg)
+
+    def send_study_warning(self):
+        msg = "[学习新思想, 争做新青年!] 看青年大学习啦! \n [你猜我是谁🧐🧐🧐]"
 
     def set_timer(self):
         flag = False
@@ -23,6 +26,8 @@ class EpidemicPrevention:
             if ((0 <= t.tm_hour <= 1) or (11 <= t.tm_hour <= 12)) and not flag:
                 flag = True
                 self.send_warning()
+                if t.tm_wday == 1 or t.tm_wday == 6:
+                    self.send_study_warning()
             elif not ((0 <= t.tm_hour <= 1) or (11 <= t.tm_hour <= 12)):
                 flag = False
 
