@@ -16,7 +16,7 @@ class EpidemicPrevention:
         send_warning_to_group(msg)
 
     def send_study_warning(self):
-        msg = "[学习新思想, 争做新青年!] 看青年大学习啦! \n [你猜我是谁🧐🧐🧐]"
+        msg = "[学习新思想, 争做新青年!] 看青年大学习啦! \n [🧐🧐🧐]"
 
     def set_timer(self):
         flag = False
