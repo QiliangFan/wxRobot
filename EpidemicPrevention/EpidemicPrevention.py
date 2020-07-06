@@ -26,7 +26,7 @@ class EpidemicPrevention:
             if ((0 <= t.tm_hour <= 1) or (11 <= t.tm_hour <= 12)) and not flag:
                 flag = True
                 self.send_warning()
-                if t.tm_wday == 1 or t.tm_wday == 6:
+                if (t.tm_wday == 1 or t.tm_wday == 6) and t.tm_hour <= 1:
                     self.send_study_warning()
             elif not ((0 <= t.tm_hour <= 1) or (11 <= t.tm_hour <= 12)):
                 flag = False
